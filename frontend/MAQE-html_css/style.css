@@ -1,0 +1,57 @@
+*, *:after, *:before{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+html{
+	font-size: 16px
+}
+body{
+	background-color: #fff;
+	margin: 20px;
+	padding: 0;
+	font-family: sans-serif;
+	font-size: 1rem;
+}
+
+.btn{
+	background-color: #fff; /* Green */
+}
+
+.typeOne{
+	background-color: #009059; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.typeOne:before {
+	content: 'SCORE';
+	margin-right: 8px;
+}
+
+.star { 
+	float: left;
+    position: relative;
+    top: -3px;
+
+}
+
+.btn-container{
+	float: left;
+	margin-right: 10px;
+	width: 151px;
+	padding: 2px 2px;
+	background: white; 
+	color: white; 
+	border: 1px solid #009059;
+	border-radius: 3px;
+	-webkit-box-shadow: 0px 2px 5px 0px rgba(189,183,189,1);
+	-moz-box-shadow: 0px 2px 5px 0px rgba(189,183,189,1);
+	box-shadow: 0px 2px 5px 0px rgba(189,183,189,1);
+
+}

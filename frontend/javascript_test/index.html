@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript Test</title>
+    </head>
+    <body>
+        
+        <div id="container">
+            <div id="row"></div>
+        </div>
+
+        <script id="profiletpl" type="text/template">
+            <div id="profile">
+                <ul>
+                    {{#roles}}
+                    <li class="person">
+                     <img src="{{image}}" alt="Photo of {{title}}">
+                     <div class="name">
+		            	{{#nickname}}
+		            	<span>{{nickname}}</span>
+		            	{{/nickname}}
+		            
+		            	{{^nickname}}
+		            	<span>{{firstName}}</span>
+		            	{{/nickname}}
+                     </div>
+                     <div class="title">{{title}}</div>
+                    </li>
+                    {{/roles}}
+                </ul>
+            </div>
+        </script>
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
+
+        <script type="text/javascript">
+            $.ajax({
+                    dataType: "json",
+                    url: 'https://raw.githubusercontent.com/maqe/maqe.github.io/gh-pages/persons.json',
+                    success: function (data) {          
+                        data = { 'roles': data }; 
+                        var html = Mustache.to_html($('#profiletpl').html(), data);
+                        $('#row').html(html);
+                    }
+                })
+        </script>
+    </body>
+</html>
